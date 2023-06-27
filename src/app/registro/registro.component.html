@@ -1,0 +1,138 @@
+<!--
+    public id: number;
+    public email: string;
+    public password: string;
+    public nombre: string;
+    public apellido: string;
+    public dni: string;
+    public telefono: string;
+    public enabled: boolean;
+    public perfil: string;
+
+    public fbEmpresarial: string;
+    public wppEmpresarial: string;
+    public igEmpresarial: string;
+    public emailEmpresarial: string;
+    public twitterEmpresarial: string;
+    public ubicacionEmpresarial: string;
+    public autopago: boolean;
+    public deshabilitarAutopagoSiCambiaElPrecio: boolean;
+    public dbUrl: string;
+    public dbUsername: string;
+    public dbPassword: string;
+    public pagos: Pago[];
+-->
+<form (ngSubmit)="submit()">
+
+    <div *ngIf="paso==1">
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+              <label for="regEmail">Email</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="Email" name="regEmail" [(ngModel)]="usuario.email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="regPassword">Password</label>
+              <input type="password" class="form-control" id="regPassword" placeholder="Contraseña" name="regPassword" [(ngModel)]="usuario.password">
+            </div>
+        </div>
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+                <label for="regNombre">Nombre</label>
+                <input type="text" class="form-control" id="regNombre" placeholder="Nombre" name="regNombre" [(ngModel)]="usuario.nombre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="regApellido">Apellido</label>
+                <input type="text" class="form-control" id="regApellido" placeholder="Apellido" name="regApellido" [(ngModel)]="usuario.apellido">
+            </div>
+        </div>
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+                <label for="regDni">DNI</label>
+                <input type="text" class="form-control" id="regDni" placeholder="DNI" name="regDni" [(ngModel)]="usuario.dni">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="regTelefono">Telefono</label>
+                <input type="text" class="form-control" id="regTelefono" placeholder="Telefono" name="regTelefono" [(ngModel)]="usuario.telefono">
+            </div>
+        </div>
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="regAutopago" name="regAutopago" [(ngModel)]="usuario.autopago">
+                    <label class="form-check-label" for="regAutopago">
+                        Auto-Pago
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="regDeshabilitarAutopagoSiCambiaElPrecio" name="regDeshabilitarAutopagoSiCambiaElPrecio" [(ngModel)]="usuario.deshabilitarAutopagoSiCambiaElPrecio">
+                    <label class="form-check-label" for="regDeshabilitarAutopagoSiCambiaElPrecio">
+                        Deshabilitar Auto-Pago si cambia el precio
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="irPaso(2)" class="btn btn-success">Continuar</button>
+    </div>
+
+<!--
+    public fbEmpresarial: string;
+    public wppEmpresarial: string;
+    public igEmpresarial: string;
+    public emailEmpresarial: string;
+    public twitterEmpresarial: string;
+    public ubicacionEmpresarial: string;
+    public dbUrl: string;
+-->
+
+
+
+
+
+    <div *ngIf="paso==2">
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-3">
+                <label for="regWppEmpresarial">WhatsApp Empresarial</label>
+                <input type="text" class="form-control" id="regWppEmpresarial" placeholder="WhatsApp" name="regWppEmpresarial" [(ngModel)]="usuario.wppEmpresarial">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="regNombreEmpresa">Nombre de Empresa</label>
+                <input type="text" class="form-control" id="regNombreEmpresa" placeholder="Empresa" name="regNombreEmpresa" [(ngModel)]="usuario.dbUrl">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="regEmailEmpresarial">Email de Empresa</label>
+                <input type="email" class="form-control" id="regEmailEmpresarial" placeholder="Email" name="regEmailEmpresarial" [(ngModel)]="usuario.emailEmpresarial">
+            </div>
+        </div>
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+                <label for="regFbEmpresarial">FaceBook</label>
+                <input type="text" class="form-control" id="regFbEmpresarial" placeholder="FaceBook" name="regFbEmpresarial" [(ngModel)]="usuario.fbEmpresarial">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="regIgEmpresarial">Instagram</label>
+                <input type="text" class="form-control" id="regIgEmpresarial" placeholder="Instagram" name="regIgEmpresarial" [(ngModel)]="usuario.igEmpresarial">
+            </div>
+        </div>
+        <div class="form-row w-100 m-0">
+            <div class="form-group col-md-6">
+                <label for="regTwitterEmpresarial">Twitter</label>
+                <input type="text" class="form-control" id="regTwitterEmpresarial" placeholder="Twitter" name="regTwitterEmpresarial" [(ngModel)]="usuario.twitterEmpresarial">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="regUbicacionEmpresarial">Ubicacion GoogleMaps</label>
+                <input type="text" class="form-control" id="regUbicacionEmpresarial" placeholder="GoogleMaps" name="regUbicacionEmpresarial" [(ngModel)]="usuario.ubicacionEmpresarial">
+            </div>
+        </div>
+        <div class="row m-0 w-100">
+            <div class="col-md-6">
+                <button type="button" (click)="irPaso(1)" class="btn btn-dark">Volver</button>
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success">Registrarme</button>
+            </div>
+        </div>
+    </div>
+
+</form>

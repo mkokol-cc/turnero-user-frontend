@@ -1,0 +1,80 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Log In
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+         <!--
+        <div class="modal-header">
+           
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        -->
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h5>Ingresa</h5>
+            <hr>
+
+            <form *ngIf="recuperarPass==0" (ngSubmit)="submit()">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" [(ngModel)]="username" name="username" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" [(ngModel)]="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <div class="text-right w100">
+                    <label class="link-password" (click)="cambiarPantalla(1)">Olvidé mi Contraseña</label>
+                  </div>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-outline-dark">Ingresar</button>
+                </div>
+            </form>
+
+
+
+
+            <form *ngIf="recuperarPass==1" (ngSubmit)="reestablecerClave()">
+
+              <p>Para recuperar tu contraseña ingresa el correo electronico asociado a tu cuenta:</p>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder="Email">
+              </div>
+
+              <div class="row m-0 w-100">
+                <div class="text-left col">
+                  <button (click)="cambiarPantalla(0)" class="btn btn-primary">Volver</button>
+                </div>
+                <div class="text-right col">
+                  <button type="submit" class="btn btn-dark">Enviar</button>
+                </div>
+              </div>
+            </form>
+
+
+
+
+
+            <hr>
+            <div style="display: flex;
+            justify-content: space-evenly;
+            align-items: center;">
+                <button type="button" aria-describedby="registroHelp" class="btn btn-success" data-dismiss="modal">Registrarme</button>
+                <small id="registroHelp" class="form-text text-muted">Obtienes 1 mes GRATIS!</small>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+</div>

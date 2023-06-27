@@ -1,0 +1,19 @@
+<div *ngIf="tokenValido != undefined">
+    <div *ngIf="tokenValido">
+        <h2>Genial!</h2>
+        <p>Ya tienes tu cuenta activada y tu propio sitio web</p>
+        <p>TIENES 1 MES GRATIS DE REGALO!</p>
+        <button class="btn btn-success">Ir a mi Sitio Web</button>
+    </div>
+    <div *ngIf="!tokenValido">
+        <form (ngSubmit)="reenviarCorreo()">
+            <h2>El código ha expirado</h2>
+            <p>Por favor ingrese su email para obtener nuevamente el código</p>
+            <div class="form-group col-md-6">
+                <label for="sendWellcomeEmail">Email</label>
+                <input type="email" class="form-control" id="sendWellcomeEmail" placeholder="Email" name="sendWellcomeEmail" [(ngModel)]="email">
+            </div>
+            <button type="submit" class="btn btn-primary">Re-enviar Código</button>
+        </form>
+    </div>
+</div>

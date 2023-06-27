@@ -1,0 +1,17 @@
+<h4>Contáctanos!</h4>
+<form (ngSubmit)="send()">
+    <div class="form-row m-0 w-100">
+        <div class="form-group col-md-9">
+            <label for="contactEmail">Email de Contacto:</label>
+            <input [(ngModel)]="contactEmail" name="contactEmail" id="contactEmail" type="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group col-md-3">
+            <button class="btn btn-success">WhatsApp</button>
+        </div>
+    </div>
+    <div class="form-row m-0 w-100">
+        <label for="contactMessage">Mensaje:</label>
+        <textarea [(ngModel)]="message" name="contactMessage" id="contactMessage" class="form-control" cols="30" rows="6"></textarea>
+    </div>
+    <button class="btn btn-dark">Enviar!</button>
+</form>

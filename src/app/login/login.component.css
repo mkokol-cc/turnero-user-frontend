@@ -1,0 +1,10 @@
+.link-password{
+    cursor: pointer;
+    color: rgb(137, 192, 202);
+    font-size: 14px;
+    font-weight: 500;
+}
+.link-password:hover{
+    text-decoration: underline;
+    color: rgb(15, 150, 173);
+}

@@ -1,0 +1,51 @@
+<h3>aca va los precios</h3>
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Plan Mensual</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$4500 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>10 users included</li>
+          <li>2 GB of storage</li>
+          <li>Email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" *ngIf="logueado" class="btn btn-lg btn-block btn-primary" (click)="payLicence(1)">Obtener Licencia!</button>
+        <button type="button" *ngIf="!logueado" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">Obtener GRATIS!</button>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Plan Trimestral</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$4200 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>20 users included</li>
+          <li>10 GB of storage</li>
+          <li>Priority email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" *ngIf="logueado" class="btn btn-lg btn-block btn-primary" (click)="payLicence(2)">Obtener Licencia!</button>
+        <button type="button" *ngIf="!logueado" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Obtener Licencia!</button>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Plan Anual</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$3750 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>30 users included</li>
+          <li>15 GB of storage</li>
+          <li>Phone and email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" *ngIf="logueado" class="btn btn-lg btn-block btn-primary" (click)="payLicence(3)">Obtener Licencia!</button>
+        <button type="button" *ngIf="!logueado" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Obtener Licencia!</button>
+      </div>
+    </div>
+</div>
