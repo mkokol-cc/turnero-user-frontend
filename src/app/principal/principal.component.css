@@ -1,75 +1,25 @@
-/*
-.container {
+#padre{
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 40px;
-    min-height: 100vh;
+}
+#hijo-1, #hijo-2{
+    min-width: 300px;
+    width: 50%;
+}
+#hijo-1{
+    height: 100%;
 }
 
-.card {
-    background: #287bff;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    width: 320px;
-    height: 450px;
-    margin: 30px;
-    border-radius: 20px;
-    border-bottom-left-radius: 160px;
-    border-bottom-right-radius: 160px;
-    box-shadow: 0 15px 0 #fff,
-            inset 0 -15px 0 rgba(255, 255, 255, 0.24),
-            0 45px 0 rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-     
-}
+@media (max-width: 600px) {
+    #padre {
+      flex-direction: column;
+    }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: -140px;
-    left: -40%;
-    padding: 0;
-    width: 100%;
-    height: 120%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
-    transform: rotate(35deg);
-    pointer-events: none;
-    filter: blur(5px);
-}
-
-.card:nth-child(1) {
-    background: linear-gradient(to bottom, #ff2ae0, #645bf6);
-}
-
-.card:nth-child(2) {
-    background: linear-gradient(to bottom, #ffec61, #f321d7);
-}
-
-.card:nth-child(3) {
-    background: linear-gradient(to bottom, #24ff72, #9a4eff);
-}
-
-.card .content {
-    position: absolute;
-    width: 100%;
-    padding: 30px;
-    padding-top: 150px;
-    text-align: center;
-}
-
-.card .content h2 {
-    font-size: 1.8em;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.card .content p {
-    color: #fff;
-    line-height: 1.5em;
-}
-
-*/
+    #hijo-2 {
+      order: -1;
+      width: 100%;
+    }
+    #hijo-1{
+        width: 100%;
+    }
+  }
